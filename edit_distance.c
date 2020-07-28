@@ -17,8 +17,10 @@ int main(){
 	int len2=strlen(s2);
 	
 	int n=len1;
+	int small=len2;
 	if(len2<=n){
 		n=len2;
+		small=len1;
 	}
 	
 	int count=1,a=0;
@@ -40,7 +42,13 @@ int main(){
 		}
 	}
 	
-	printf("\nThe edit distance between %s and %s is %d.",s1,s2,n-count);
+	int edit=n-count;
+	
+	if(count==1){
+		edit=n+small;
+	}
+	printf("\nThe edit distance between %s and %s is %d.",s1,s2,edit);
+	
 	
 	
 	
