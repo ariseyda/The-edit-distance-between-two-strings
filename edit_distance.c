@@ -3,7 +3,7 @@
 #define size 30
 
 /*The edit distance between two strings refers to the minimum number of character insertions, deletions, and substitutions required to change one string to the other. 
-For example, the edit distance between “kitten” and “sitting” is three: substitute the “k” for “s”, substitute the “e” for “i”, and append a “g”.
+For example, the edit distance between â€œkittenâ€ and â€œsittingâ€ is three: substitute the â€œkâ€ for â€œsâ€, substitute the â€œeâ€ for â€œiâ€, and append a â€œgâ€.
 Given two strings, compute the edit distance between them.*/
 
 int main(){
@@ -21,19 +21,26 @@ int main(){
 		n=len2;
 	}
 	
-	int count=len1-len2;
-	if(count<0){
-		count*=-1;
-	}
+	int count=1,a=0;
 	
 	int i;
 	for(i=0;i<n;i++){
-		if(s1[i]!=s2[i]){
+		if(i+1==strlen(s1)){
+			i=0;
+			
+		}
+		if(s1[i]==s2[a]){
 			count++;
+			
+			
+		}
+		a++;
+		if(a>=n){
+			break;
 		}
 	}
 	
-	printf("\nThe edit distance between %s and %s is %d.",s1,s2,count);
+	printf("\nThe edit distance between %s and %s is %d.",s1,s2,n-count);
 	
 	
 	
