@@ -27,9 +27,12 @@ int main(){
 	
 	int i;
 	for(i=0;i<n;i++){
-		if(i+1==strlen(s1)){
-			i=0;
+		if(len1>len2&&a+1==strlen(s2)){
+			a=0;
 			
+		}
+		else if(len2>=len1&&i+1==strlen(s1)){
+			i=0;
 		}
 		if(s1[i]==s2[a]){
 			count++;
